@@ -55,7 +55,7 @@ function Card({repo, cfg}) {
   const tags = [repo.language, ...(repo.topics || [])].filter(Boolean).slice(0, 4);
   const updated = new Date(repo.updated_at).toLocaleDateString("en-GB", {day: "2-digit", month: "short", year: "numeric",});
   return (
-    <a
+    <div
      className="card"
      href={repo.homepage || repo.html_url}
      target="_blank"
@@ -78,7 +78,7 @@ function Card({repo, cfg}) {
           <a href={repo.homepage} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>live ↗</a>
         )}
       </div>
-    </a>
+    </div>
   );
 }
 
@@ -124,7 +124,7 @@ export default function SubdomainPage() {
 
   useEffect(() => {
     const tick = () =>
-      setTime(new Date().toLocaleString("en-US", {timeZone: "Asia/Kolkata"}).split(" ")[4]+" IST");
+      setTime(new Date().toLocaleString("en-US", {timeZone: "Asia/Kolkata", hour12: true})+" IST");
     tick();
     const id = setInterval(tick, 1000);
     return () => clearInterval(id);
@@ -146,7 +146,7 @@ export default function SubdomainPage() {
           <span className="sep">|</span>
           <span className="zone-label">{cfg.title.toUpperCase()}</span>
           <span className="sep">|</span>
-          <span>{loading ? "--" : repos.length} PROJECTS</span>
+          <span>{loading ? "-- PROJECTS" : repos.length>1 ? "${repos.length} PROJECTS" : `${repos.length} PROJECT`}</span>
         </div>
         <main>
           <div className="fids-row">
@@ -165,7 +165,7 @@ export default function SubdomainPage() {
           </div>
 
           {loading && <div className="state-msg">Fetching flight data from tower...</div>}
-          {error && <div className="stage-msg error">TOWER UNREACHABLE — {error}</div>}
+          {error && <div className="state-msg error">TOWER UNREACHABLE — {error}</div>}
           {!loading && !error && repos.length === 0 && (
             <div className="state-msg error">
               NO FLIGHTS IN THIS ZONE<br/>
