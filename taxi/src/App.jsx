@@ -90,7 +90,7 @@ function Nav({cfg, menuOpen, setMenuOpen}) {
         {menuOpen && (
           <div className="dropdown" onClick={(e) => e.stopPropagation()}>
             {Object.entries(ZONES).map(([key, z]) => (
-              <a key={key} href={`http://${key}.localhost:5173`}>{z.icon} {z.title}</a>
+              <a key={key} href={`http://${key}.orpheusairlines.xyz`}>{z.icon} {z.title}</a>
             ))}
           </div>
         )}
