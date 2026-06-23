@@ -70,7 +70,7 @@ function Card({repo, cfg}) {
       <div className="card-meta">
         {tags.map ((t) => <span className="tag" key={t}>{t}</span>)}
         <span className="tag">⭐ {repo.stargazers_count}</span>
-        <span className="tag">upd {updated}</span>
+        <span className="tag">Last Updated at: {updated}</span>
       </div>
       <div className="card-links">
         <a href={repo.html_url} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>repo ↗</a>
@@ -86,11 +86,11 @@ function Nav({cfg, menuOpen, setMenuOpen}) {
   return (
     <nav className="navbar">
       <div className="nav-left" style={{position: "relative"}}>
-        <button className="side-bar" onClick={() => setMenuOpen(!menuOpen)}>☰</button>
+        <button className="side-bar" onClick={(e) => {e.stopPropagation(); setMenuOpen(!menuOpen); }}>☰</button>
         {menuOpen && (
-          <div className="dropdown">
+          <div className="dropdown" onClick={(e) => e.stopPropagation()}>
             {Object.entries(ZONES).map(([key, z]) => (
-              <a key={key} href={`https://${key}.orpheusairlines.xyz`}>{z.icon} {z.title}</a>
+              <a key={key} href={`http://${key}.localhost:5173`}>{z.icon} {z.title}</a>
             ))}
           </div>
         )}
@@ -137,7 +137,7 @@ export default function SubdomainPage() {
 
   return (
     <div onClick={() => setMenuOpen(false)}>
-      <Nav cfg={cfg} menuOpen={menuOpen} setMenuOpen={(v) => {event?.stopPropagation(); setMenuOpen(v);}} />
+      <Nav cfg={cfg} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <div className="status-bar">
           <span className="dot"/>
           <span>FIDS</span>
@@ -146,7 +146,7 @@ export default function SubdomainPage() {
           <span className="sep">|</span>
           <span className="zone-label">{cfg.title.toUpperCase()}</span>
           <span className="sep">|</span>
-          <span>{loading ? "-- PROJECTS" : repos.length>1 ? "${repos.length} PROJECTS" : `${repos.length} PROJECT`}</span>
+          <span>{loading ? "-- PROJECTS" : repos.length>1 ? `${repos.length} PROJECTS` : `${repos.length} PROJECT`}</span>
         </div>
         <main>
           <div className="fids-row">

@@ -47,13 +47,17 @@ body{
     border-radius: 4px;
 }
 
+.side-bar:hover {
+    opacity: 0.5;
+    border: 1px solid var(--red-bright)
+}
+
 .dropdown {
     position: absolute;
     top: 52px;
     left: 0;
     background: var(--surface);
     border: 1px solid var(--border2);
-    border-top: none;
     min-width: 180px;
     z-index: 200;
 }
@@ -186,8 +190,15 @@ main {
 
 .page-header {
     border-left: 3px solid var(--red);
+    border-right: 2px solid var(--red);
+    border-top: 1px solid var(--red);
+    border-bottom: 4px solid var(--red);
     padding-left: 1rem;
     margin-bottom: 2rem;
+}
+
+.page-header:hover{
+    opacity: 0.5;
 }
 
 .page-header h1 {
