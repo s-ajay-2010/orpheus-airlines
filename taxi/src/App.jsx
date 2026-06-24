@@ -4,6 +4,8 @@ import { Octokit, App } from "octokit";
 
 const token = import.meta.env.GITHUB_ACCESS_TOKEN;
 const octokit = new Octokit({ auth: token});
+console.log(token);
+console.log(import.meta.env.GITHUB_ACCESS_TOKEN)
 
 //desc = description,
 //don't get confused like my friend who got confused when I opened it lol
