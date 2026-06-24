@@ -94,7 +94,7 @@ function Nav({cfg, menuOpen, setMenuOpen}) {
         {menuOpen && (
           <div className="dropdown" onClick={(e) => e.stopPropagation()}>
             {Object.entries(ZONES).map(([key, z]) => (
-              <a key={key} href={`http://${key}.orpheusairlines.xyz`}>{z.icon} {z.title}</a>
+              <a key={key} href={`https://${key}.orpheusairlines.xyz`}>{z.icon} {z.title}</a>
             ))}
           </div>
         )}
@@ -112,7 +112,7 @@ function Nav({cfg, menuOpen, setMenuOpen}) {
 
 export default function SubdomainPage() {
   const host = window.location.hostname;
-  const zonekey = Object.keys(ZONES).find((k) => host.includes(k)) || "taxi";
+  const zonekey = Object.keys(ZONES).find((k) => host.includes(k)) || "airborne";
   const cfg = ZONES[zonekey];
 
   const [repos, setRepos] = useState([]);
