@@ -112,7 +112,7 @@ function Nav({cfg, menuOpen, setMenuOpen}) {
 
 export default function SubdomainPage() {
   const host = window.location.hostname;
-  const zonekey = Object.keys(ZONES).find((k) => host.includes(k)) || "airborne";
+  const zonekey = Object.keys(ZONES).find((k) => host.includes(k)) || "holding-short";
   const cfg = ZONES[zonekey];
 
   const [repos, setRepos] = useState([]);
