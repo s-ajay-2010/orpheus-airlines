@@ -3,8 +3,6 @@ import './App.css'
 import { Octokit, App } from "octokit";
 
 const token = import.meta.env.VITE_GITHUB_ACCESS_TOKEN;
-const octokit = new Octokit({ auth: token});
-console.log(token);
 console.log(import.meta.env.VITE_GITHUB_ACCESS_TOKEN)
 
 //desc = description,
