@@ -51,12 +51,17 @@
 }
 
 body {
+  background: #0a0605;
+  color: #f0ddd8;
+  font-family: 'Courier New', Courier, monospace;
+  min-height: 100vh;
+  width: 100%;
   margin: 0;
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
+  width: 100%;
+  min-height: 100vh;
   margin: 0 auto;
   text-align: center;
   border-inline: 1px solid var(--border);

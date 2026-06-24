@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import './App.css'
 
+const token = import.meta.env.GITHUB_ACCESS_TOKEN;
+
 //desc = description,
 //don't get confused like my friend who got confused when I opened it lol
 
@@ -35,7 +37,7 @@ const ZONES = {
 
 async function checkFile(repo, filename) {
   try {
-    const response = await fetch(`https://api.github.com/repos/s-ajay-2010/${repo}/contents/${filename}`);
+    const response = await fetch(`https://api.github.com/repos/s-ajay-2010/${repo}/contents/${filename}`, {headers: {Authorization: `Bearer ${token}`}});
     return response.status === 200;
   }
   catch {
@@ -44,7 +46,7 @@ async function checkFile(repo, filename) {
 }
 
 async function fetchRepos(marker) {
-  const res = await fetch (`https://api.github.com/users/s-ajay-2010/repos?per_page=100&sort=updated`);
+  const res = await fetch (`https://api.github.com/users/s-ajay-2010/repos?per_page=100&sort=updated`, {headers: {Authorization: `Bearer ${token}`}});
   if (!res.ok) throw new Error("GitHub API error");
   const repos = await res.json();
   const results = await Promise.all(repos.map(async (r) => ((await checkFile(r.name, marker)) ? r : null)));
