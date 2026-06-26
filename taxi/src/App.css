@@ -407,11 +407,14 @@ main {
 }
 
 footer {
+    position: absolute;
+    bottom: 1px;
+    width: 100%;
     text-align: center;
-    padding: 1.25rem;
+    padding: 1rem;
     font-family: var(--mono);
-    font-size: 10px;
+    font-size: 13px;
     color: var(--mut);
     border-top: 1px solid var(--border);
-    letter-spacing: 1px;
+
 }
