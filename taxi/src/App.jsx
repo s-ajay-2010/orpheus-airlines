@@ -8,12 +8,20 @@ const token = import.meta.env.VITE_GITHUB_ACCESS_TOKEN;
 //don't get confused like my friend who got confused when I opened it lol
 
 const ZONES = {
+  all: {
+    title: "All",
+    zone: "ALL",
+    desc: "All projects",
+    url: "https://orpheusairlines.xyz/",
+    icon: "📡",
+  },
   taxi: {
     marker: ".taxi",
     title: "Taxiing",
     zone: "GND",
     desc: "Projects in active development",
     badgeText: "TAXIING",
+    badgeClass: "badge-taxi",
     icon: "🛞",
   },
   "holding-short": {
