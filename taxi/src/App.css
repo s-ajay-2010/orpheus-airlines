@@ -407,10 +407,12 @@ main {
 }
 
 footer {
-    position: sticky;
+    position: fixed;
+    bottom: 0;
     width: 100%;
     text-align: center;
     padding: 1rem;
+    background-color: var(--bg);
     font-family: var(--mono);
     font-size: 13px;
     color: var(--mut);
