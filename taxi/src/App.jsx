@@ -22,7 +22,7 @@ const ZONES = {
     desc: "Projects in active development",
     badgeClass: "badge-taxi",
     badgeText: "TAXIING",
-    icon: "🛞",
+    icon: <svg xmlns="http://www.w3.org/2000/svg" width="19px" height="24px" fill="#9a3100" viewBox="0 0 256 256"><path d="M208,96H147.32L101.66,50.34A8,8,0,0,0,96,48H88A16,16,0,0,0,72.83,69.06l9,26.94H59.32L37.66,74.34A8,8,0,0,0,32,72H24A16,16,0,0,0,8.69,92.6l14.07,46.89A39.75,39.75,0,0,0,61.07,168H240a8,8,0,0,0,8-8V136A40,40,0,0,0,208,96Zm24,56H61.07a23.85,23.85,0,0,1-23-17.1L24,88h4.68l21.66,21.66A8,8,0,0,0,56,112h36.9a8,8,0,0,0,7.59-10.53L88,64h4.68l45.66,45.66A8,8,0,0,0,144,112h64a24,24,0,0,1,24,24Zm-8,48a16,16,0,1,1-16-16A16,16,0,0,1,224,200Zm-96,0a16,16,0,1,1-16-16A16,16,0,0,1,128,200Z"></path></svg>,
     url: 'https://taxi.orpheusairlines.xyz/',
   },
   "holding-short": {
@@ -32,7 +32,7 @@ const ZONES = {
     desc: "Projects awaiting to be deployed",
     badgeClass: "badge-holding",
     badgeText: "HOLD SHORT",
-    icon: "⏸",
+    icon: <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="19px" fill="#9a3100"><path d="M520-200v-560h240v560H520Zm-320 0v-560h240v560H200Zm400-80h80v-400h-80v400Zm-320 0h80v-400h-80v400Zm0-400v400-400Zm320 0v400-400Z"/></svg>,
     url: 'https://holding-short.orpheusairlines.xyz/'
   },
   airborne: {
@@ -42,7 +42,7 @@ const ZONES = {
     desc: "Shipped projects",
     badgeClass: "badge-airborne",
     badgeText: "AIRBORNE",
-    icon: "✈",
+    icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plane-icon lucide-plane"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>,
     url: 'https://airborne.orpheusairlines.xyz/',
   },
 };
@@ -81,9 +81,9 @@ async function fetchRepos(marker) {
 }
 
 const STATUS_BADGE = {
-  taxi: {cls: 'badge-taxi', text: 'TAXIING', icon: '🛞'},
-  'holding-short': {cls: 'badge-holding', text: 'HOLD-SHORT', icon: '⏸'},
-  airborne: {cls: 'badge-airborne', text: 'AIRBORNE', icon: '✈'},
+  taxi: {cls: 'badge-taxi', text: 'TAXIING', icon: <svg xmlns="http://www.w3.org/2000/svg" width="50%" height="50%" fill="#ffffff" viewBox="0 0 256 256"><path d="M208,96H147.32L101.66,50.34A8,8,0,0,0,96,48H88A16,16,0,0,0,72.83,69.06l9,26.94H59.32L37.66,74.34A8,8,0,0,0,32,72H24A16,16,0,0,0,8.69,92.6l14.07,46.89A39.75,39.75,0,0,0,61.07,168H240a8,8,0,0,0,8-8V136A40,40,0,0,0,208,96Zm24,56H61.07a23.85,23.85,0,0,1-23-17.1L24,88h4.68l21.66,21.66A8,8,0,0,0,56,112h36.9a8,8,0,0,0,7.59-10.53L88,64h4.68l45.66,45.66A8,8,0,0,0,144,112h64a24,24,0,0,1,24,24Zm-8,48a16,16,0,1,1-16-16A16,16,0,0,1,224,200Zm-96,0a16,16,0,1,1-16-16A16,16,0,0,1,128,200Z"></path></svg>},
+  'holding-short': {cls: 'badge-holding', text: 'HOLD-SHORT', icon: <svg xmlns="http://www.w3.org/2000/svg" height="50%" viewBox="0 -960 960 960" width="50%" fill="#e3e3e3"><path d="M520-200v-560h240v560H520Zm-320 0v-560h240v560H200Zm400-80h80v-400h-80v400Zm-320 0h80v-400h-80v400Zm0-400v400-400Zm320 0v400-400Z"/></svg>},
+  airborne: {cls: 'badge-airborne', text: 'AIRBORNE', icon: <svg xmlns="http://www.w3.org/2000/svg" width="50%" height="50%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plane-icon lucide-plane"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>},
 }
 
 function Card({repo, cfg}) {
@@ -92,10 +92,7 @@ function Card({repo, cfg}) {
   const badge = repo._status ? STATUS_BADGE[repo._status] : {cls: cfg.badgeClass, text: cfg.badgeText, icon: cfg.icon};
   return (
     <div className="card">
-      <div className="card-head">
-        <span className="card-icon">{badge.icon}</span>
-        <span className={`badge ${badge.cls}`}>{badge.text}</span>
-      </div>
+      <div className="card-wrap">
       <div className="card-title">{repo.name}</div>
       <div className="card-desc">{repo.description || "No flight plan filed."}</div>
       <div className="card-meta">
@@ -108,6 +105,11 @@ function Card({repo, cfg}) {
         {repo.homepage && (
           <a href={repo.homepage} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>live ↗</a>
         )}
+      </div>
+      </div>
+      <span className={`badge ${badge.cls}`}>{badge.text}</span>
+      <div className="card-status">
+        <span className="card-icon">{badge.icon}</span>
       </div>
     </div>
   );
@@ -146,7 +148,7 @@ export default function HomePage() {
     <div onClick={() => setMenuOpen(false)}>
       <nav className="navbar">
         <div style={{position: 'relative'}} onClick={e => e.stopPropagation()}>
-          <button className="side-bar" onClick={() => setMenuOpen(m => !m)}>☰</button>
+          <button className="side-bar" onClick={() => setMenuOpen(m => !m)}><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 770" width="24px" fill="#e3e3e3"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></button>
           {menuOpen && (
             <div className="dropdown">
               {Object.entries(ZONES).map(([key, z]) => (
