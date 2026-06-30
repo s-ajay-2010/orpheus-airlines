@@ -22,5 +22,7 @@ Open [http://localhost:5173/](http://localhost:5173/)
 - Use ```git switch {branch name}``` to switch to the branches and use ```git branch -a``` to see the branches available.
 - Add the respective markers to the repo's root.
 
-# AI Usage: NIL.
-I swear if you find even a pinch of AI("it looks like" anoll are not acceptable) in this, I'll leave programming forever. I'll never return.
+# AI Usage:
+- For UI development claude was used, other than that all logic was written by human(me).
+- But I made the core design and let claude refine it and make it alive.
+- For the proof of my design-originality, please check [here↗](https://github.com/s-ajay-2010/orpheus-airlines/tree/main/media)(the same things can be seen in my [development-branch↗](https://github.com/s-ajay-2010/orpheus-airlines/tree/development) where I write the whole thing, battle css to get an original design)
